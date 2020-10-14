@@ -1,17 +1,17 @@
 from django.db import models
 from django.utils.translation import gettext as _
 
-class Sightings(models.Model):
-    Lattitude = models.DecimalField(
+class Squirrel(models.Model):
+    X = models.DecimalField(
             max_length=100,
-            max_digits=16,
-            decimal_places=13, 
+            max_digits=18,
+            decimal_places=14, 
             help_text=_('Lattitude of sighting location'))
 
-    Longitude = models.DecimalField(
+    Y  = models.DecimalField(
             max_length=100,
-            max_digits=16,
-            decimal_places=13,
+            max_digits=18,
+            decimal_places=14,
             help_text=_('Longitude of sighting location'))
 
     Unique_Squirrel_ID= models.CharField(
@@ -169,4 +169,6 @@ class Sightings(models.Model):
             default=False,
             )
     
+    def __str__(self):
+            return self.Unique_Squirrel_ID
 
