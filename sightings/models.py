@@ -1,5 +1,5 @@
 from django.db import models
-import dajngo.utils.translation import gettext as _
+from django.utils.translation import gettext as _
 
 class Sightings(models.Model):
     Lattitude = models.DecimalField(
@@ -37,7 +37,7 @@ class Sightings(models.Model):
 
     JUVENILE  = 'juvenile'
     ADULT = 'adult'
-    OTHER = 'other'
+    OTHER = 'Other'
 
     AGE_CHOICES = [
             (JUVENILE,_('Juvenile')),
@@ -49,7 +49,7 @@ class Sightings(models.Model):
             max_length=15,
             help_text=_('Age of Squirrel'),
             choices=AGE_CHOICES,
-            default=Other,
+            default=OTHER,
             blank=True, 
             )
 
@@ -69,7 +69,7 @@ class Sightings(models.Model):
             max_length=50,
             help_text=_('Color of Squirrel'),
             choices=PRIMARY_FUR_COLOR_CHOICES,
-            default=Other,
+            default=OTHER,
             blank=True,
             )
 
@@ -79,7 +79,7 @@ class Sightings(models.Model):
 
     LOCATION_CHOICES = [
             (GROUND_PLANE,_('Ground Plane')),
-            (ABOVE_GROUND,_('Above Ground'),
+            (ABOVE_GROUND,_('Above Ground')),
             (OTHER,_('Other')),
             ]
 
@@ -87,7 +87,7 @@ class Sightings(models.Model):
             max_length=50,
             help_text=_('Location of Squirrel'),
             choices=LOCATION_CHOICES,
-            default=Other,
+            default=OTHER,
             blank=True,
             )    
 
@@ -166,4 +166,5 @@ class Sightings(models.Model):
             help_text=_('Wheter or not squirrel runs from observer'),
             default=False,
             )
+    
 
