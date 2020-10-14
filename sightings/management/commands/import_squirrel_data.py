@@ -1,55 +1,41 @@
 from django.core.management.base import BaseCommand, CommandError
 import csv 
 from sightings.models import Squirrel
-import datetime
 
 class Command(BaseCommand):
 
     def add_arguments(self, parser):
-        parser.add_argument('path', type=str, help='/path/to/file.csv')
+        parser.add_argument('path', help="csv file", type=str)
 
-    def handle(self, *args, **options):
-        path = options['path']
-        with open(path, mode='r') as x:
-            squirrel_data = csv.reader(x)
-                       
-            
-            squirrel_sightings=[]
-            squirrel_id=[]
-            
-            for i in squirrel_data:
-                if i.get('Unique Squirrel ID') in squirrel_id:
-                    continue
-                else:
-                    item = Squirrel(
-                    X = i.get('X'),
-                    Y = i.get('Y'),
-                    Unique_Squirrel_ID = i.get('Unique Squirrel ID'),
-                    Shift = i.get('Shift'),
-                    Date = datetime.date(int(i.get('Date')[-4:]),int(i.get('Date')[:2]),int(i.get('Date')[2:4])),
-                    Age = i.get('Age'),
-                    Primary_Fur_Color = i.get('Primary Fur Color'),
-                    Location = i.get('Location'),
-                    Specific_Location = i.get('Specific Location'),
-                    Running = True if i.get('Running').lower()=='true' else False,
-                    Chasing = True if i.get('Chasing').lower()=='true' else False,
-                    Climbing = True if i.get('Climbing').lower()=='true' else False,
-                    Eating = True if i.get('Eating').lower()=='true' else False,
-                    Foraging = True if i.get('Foraging').lower()=='true' else False,
-                    Other_Activities = i.get('Other Activities'),
-                    Kuks = True if i.get('Kuks').lower()=='true' else False,
-                    Quaas = True if i.get('Quaas').lower()=='true' else False,
-                    Moans = True if i.get('Moans').lower()=='true' else False,
-                    Tail_flags = True if i.get('Tail flags').lower()=='true' else False,
-                    Tail_twitches = True if i.get('Tail twitches').lower()=='true' else False,
-                    Approaches = True if i.get('Approaches').lower()=='true' else False,
-                    Indifferent = True if i.get('Indifferent').lower()=='true' else False,
-                    Runs_from = True if i.get('Runs from').lower()=='true' else False
-                    )
-                    squirrel_sightings.append(item)
-                    squirrel_id.append(i.get('Unique Squirrel ID'))
-            
-            Squirrel.objects.bulk_create(squirrel_sightings)
+    def handle(self, path, **options):
+        with open(path, 'r') as x:
+            reader = csv.reader(x)
+            next(reader)
+            for i in reader:
+                _, created = Squirrel.objects.get_or_create(
+                    X = i[0],
+                    Y= i[1],
+                    unique_squirrel_id = i[2],
+                    shift = i[4],
+                    date = i[5][4:8]+'-'+ i[5][0:2]+'-'+ i[5][2:4],
+                    age = i[7],
+                    primary_fur_color = i[8],
+                    location = i[12],
+                    specific_location = i[14],
+                    running = True if i[15].lower()=='true' else False,
+                    chasing = True if i[16].lower()=='true' else False,
+                    climbing = True if i[17].lower()=='true' else False,
+                    eating = True if i[18].lower()=='true' else False,
+                    foraging = True if i[19].lower()=='true' else False,
+                    other_activities = i[20],
+                    kuks = True if i[21].lower()=='true' else False,
+                    quaas = True if i[22].lower()=='true' else False,
+                    moans = True if i[23].lower()=='true' else False,
+                    tail_flags = True if i[24].lower()=='true' else False,
+                    tail_twitches = True if i[25].lower()=='true' else False,
+                    approaches = True if i[26].lower()=='true' else False,
+                    indifferent = True if i[27].lower()=='true' else False,
+                    runs_from = True if i[28].lower()=='true' else False,)
             
 
                     
