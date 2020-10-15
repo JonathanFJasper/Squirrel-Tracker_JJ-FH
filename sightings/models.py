@@ -48,11 +48,11 @@ class Squirrel(models.Model):
             ]
 
     Age = models.CharField(
-            max_length=15,
+            max_length=50,
             help_text=_('Age of Squirrel'),
             choices=AGE_CHOICES,
             default=OTHER,
-            blank=True, 
+            blank=True,
             )
 
     BLACK  = 'black'
