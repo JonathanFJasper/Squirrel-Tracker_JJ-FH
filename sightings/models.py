@@ -149,7 +149,7 @@ class Squirrel(models.Model):
             default=False,
             )
 
-    Tail_twithes = models.BooleanField(
+    Tail_twitches = models.BooleanField(
             help_text=_('Wheter or not squirrel was twitching tail'),
             default=False,
             )
