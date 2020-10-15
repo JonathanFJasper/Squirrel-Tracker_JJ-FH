@@ -38,6 +38,4 @@ class Command(BaseCommand):
                     Runs_from = True if i[28].lower()=='true' else False,)
             
 
-         self.stdout.write(self.style.SUCCESS('Successfully imported!'))           
-
-
+        self.stdout.write(self.style.SUCCESS('Successfully imported!')) 
