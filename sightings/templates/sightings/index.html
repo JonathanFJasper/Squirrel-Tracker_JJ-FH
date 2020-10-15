@@ -1,0 +1,22 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Squirrel sightings Homepage</title>
+    </head>
+
+    <body>
+        <h1>Squirrel sightings list</h1>
+
+        <h3>Unique_Squirrel_ID of all squirrels' sightings </h3>}
+                <ul>
+                    {%for Squirrel in sightings%}
+                        <li>{{Squirrel}}
+			<br>
+			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/'> Update the information </a>
+			<br>
+			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/details'>  See details about it </a>
+			</li>
+		    {%endfor%}
+                </ul>
+    </body>
+</html>
