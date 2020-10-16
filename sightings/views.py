@@ -28,13 +28,13 @@ def add(request):
 def update(request,Unique_Squirrel_ID):
     squirrel = Squirrel.objects.get(Unique_Squirrel_ID=Unique_Squirrel_ID)
     if request.method == "POST":
-        form = SquirrelForm(request.POST, instance=Sightings)
+        form = SquirrelForm(request.POST, instance=Squirrel)
         if form.is_valid():
             form.save()
             context={'squirrel':Squirrel.objects.all(),}
             return render(request,'sightings/index.html',context)
     else:
-        form = SquirrelForm(instance=Sightings)
+        form = SquirrelForm(instance=Squirrel)
     context = {'form':form}
     return render(request, 'sightings/update.html',context)
 
