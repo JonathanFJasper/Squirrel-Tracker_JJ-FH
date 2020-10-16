@@ -1,0 +1,31 @@
+{% load static %}
+
+
+
+<link rel="stylesheet" type="text/css" href="{% static 'sightings/style.css' %}">
+
+
+
+<!doctype html>
+
+<html>
+
+  <body>
+
+    <form method="post">
+
+      {% csrf_token %}   
+
+
+
+      {{ form.as_p }}
+
+      <br>
+
+      <input type="submit" name="Submit">
+ <a href="{% url 'sightings:index'%}">Go back to main page</a>
+    </form>
+
+  </body>
+
+</html>
