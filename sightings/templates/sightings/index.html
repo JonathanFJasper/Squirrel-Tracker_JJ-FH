@@ -1,20 +1,25 @@
 <!doctype html>
 <html>
     <head>
-        <title>Squirrel sightings Homepage</title>
+        <title>Squirrel Sightings Homepage</title>
     </head>
 
     <body>
-        <h1>Squirrel sightings list</h1>
+	<h1>JJ and Fabio's Squirrel Tracker </h1>
+        <ul>
+		<li>
+		<a href='/sightings/add/'> Add a new sighting </a>
+		</li>
+	</ul>
 
-        <h3>Unique_Squirrel_ID of all squirrels' sightings </h3>}
+        <h3>All Squirrel Sightings </h3>
                 <ul>
                     {%for Squirrel in sightings%}
                         <li>ID: {{Squirrel}} Date: {{Squirrel.Date}}
 			<br>
-			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/'> Update the information </a>
+			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/'> Update this sighting </a>
 			<br>
-			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/details'>  See details about it </a>
+			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/details'> More details  </a>
 			</li>
 		    {%endfor%}
                 </ul>
