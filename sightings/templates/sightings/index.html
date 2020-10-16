@@ -10,7 +10,7 @@
         <h3>Unique_Squirrel_ID of all squirrels' sightings </h3>}
                 <ul>
                     {%for Squirrel in sightings%}
-                        <li>{{Squirrel}}
+                        <li>ID: {{Squirrel}} Date: {{Squirrel.Date}}
 			<br>
 			<a href='/sightings/{{Squirrel.Unique_Squirrel_ID}}/'> Update the information </a>
 			<br>
