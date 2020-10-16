@@ -38,3 +38,13 @@ def update(request,Unique_Squirrel_ID):
     context = {'form':form}
     return render(request, 'sightings/update.html',context)
 
+def stats(request):
+    s1 = sightings.objects.all().count()
+    s2 = sightings.objects.filter(Shift='AM').count()
+    s3 = sightings.objects.filter(Primary_Fur_Color='Gray').count()
+    s4 = sightings.objects.filter(Eating = True).count()
+    s5 = sightings.objects.filter(Age = 'Juvenile').count()
+    
+    context={'s1':s1, 's2':s2, 's3':s3, 's4':s4, 's5':s5,}
+    
+    return render(request, 'sightings/stats.html', context)    
