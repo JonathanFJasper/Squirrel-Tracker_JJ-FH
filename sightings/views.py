@@ -46,5 +46,4 @@ def stats(request):
     s5 = Squirrel.objects.filter(Age = 'Juvenile').count()
     
     context={'s1':s1, 's2':s2, 's3':s3, 's4':s4, 's5':s5,}
-    
     return render(request, 'sightings/stats.html', context)    
