@@ -18,8 +18,9 @@ def add(request):
         form = SquirrelForm(request.POST)
         if form.is_valid():
             form.save()
-            context={'sightings':Squirrel.objects.all(),}
+            context={'sightings': Squirrel.objects.all()}
             return render(request,'sightings/index.html',context)
+        
     else:
         form = SquirrelForm()
     context = {'form':form}
