@@ -100,27 +100,27 @@ class Squirrel(models.Model):
    
 
     Running = models.BooleanField(
-            help_text=_('Wheter or not squirrel was running'),
+            help_text=_('Whether or not squirrel was running'),
             default=False,
             )
 
     Chasing = models.BooleanField(
-            help_text=_('Wheter or not squirrel was chasing'),
+            help_text=_('Whether or not squirrel was chasing'),
             default=False,
             )
 
     Climbing = models.BooleanField(
-            help_text=_('Wheter or not squirrel was climbing'),
+            help_text=_('Whether or not squirrel was climbing'),
             default=False,
             )
 
     Eating = models.BooleanField(
-            help_text=_('Wheter or not squirrel was eating'),
+            help_text=_('Whether or not squirrel was eating'),
             default=False,
             )
    
     Foraging = models.BooleanField(
-            help_text=_('Wheter or not squirrel was foraging'),
+            help_text=_('Whether or not squirrel was foraging'),
             default=False,
             )
 
@@ -130,42 +130,42 @@ class Squirrel(models.Model):
             
 
     Kuks = models.BooleanField(
-            help_text=_('Wheter or not squirrel was kuking'),
+            help_text=_('Whether or not squirrel was kuking'),
             default=False,
             )
 
     Quaas = models.BooleanField(
-            help_text=_('Wheter or not squirrel was quaasig'),
+            help_text=_('Whether or not squirrel was quaasig'),
             default=False,
             )
 
     Moans = models.BooleanField(
-            help_text=_('Wheter or not squirrel was moaning'),
+            help_text=_('Whether or not squirrel was moaning'),
             default=False,
             )
 
     Tail_flags  = models.BooleanField(
-            help_text=_('Wheter or not squirrel was flagging tail'),
+            help_text=_('Whether or not squirrel was flagging tail'),
             default=False,
             )
 
     Tail_twitches = models.BooleanField(
-            help_text=_('Wheter or not squirrel was twitching tail'),
+            help_text=_('Whether or not squirrel was twitching tail'),
             default=False,
             )
 
     Approaches = models.BooleanField(
-            help_text=_('Wheter or not squirrel was approaching'),
+            help_text=_('Whether or not squirrel was approaching'),
             default=False,
             )
 
     Indifferent = models.BooleanField(
-            help_text=_('Wheter or not squirrel was indifferent'),
+            help_text=_('Whether or not squirrel was indifferent'),
             default=False,
             )
 
     Runs_from = models.BooleanField(
-            help_text=_('Wheter or not squirrel runs from observer'),
+            help_text=_('Whether or not squirrel runs from observer'),
             default=False,
             )
     
