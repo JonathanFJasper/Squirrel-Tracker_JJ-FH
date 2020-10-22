@@ -16,7 +16,9 @@ class Squirrel(models.Model):
 
     Unique_Squirrel_ID= models.CharField(
             max_length=100,
-            help_text=_('Unique ID of the squirrel sighted'))
+            help_text=_('Unique ID of the squirrel sighted'),
+            unique=True
+            )
 
     AM = 'am'
     PM = 'pm'
