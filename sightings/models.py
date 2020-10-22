@@ -52,7 +52,7 @@ class Squirrel(models.Model):
             help_text=_('Age of Squirrel'),
             choices=AGE_CHOICES,
             default=OTHER,
-            blank=True,
+            #blank=True,
             )
 
     BLACK  = 'black'
@@ -72,7 +72,7 @@ class Squirrel(models.Model):
             help_text=_('Color of Squirrel'),
             choices=PRIMARY_FUR_COLOR_CHOICES,
             default=OTHER,
-            blank=True,
+            #blank=True,
             )
 
     GROUND_PLANE  = 'ground plane'
@@ -90,7 +90,7 @@ class Squirrel(models.Model):
             help_text=_('Location of Squirrel'),
             choices=LOCATION_CHOICES,
             default=OTHER,
-            blank=True,
+            #blank=True,
             )    
 
     Specific_Location = models.TextField(
